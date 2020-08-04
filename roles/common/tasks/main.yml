@@ -1,0 +1,12 @@
+---
+# tasks file for common
+-
+    name: "Git,Unzip,Curl,software-properties-commson,vim"
+    apt:
+        name:
+            - git
+            - unzip
+            - curl
+            - software-properties-common
+            - vim
+        state: present

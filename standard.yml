@@ -1,0 +1,24 @@
+-
+    name: standard Playbook
+    hosts : desk
+# default strategy is liner means run with parallell machine ,In Free it will we run serial vise 
+    # strategy: linear or free
+# set serial limitation
+    serial: 1    
+    become: true
+    roles:
+        #- skype
+        #- common
+        #- chrome
+        #- vscode
+       ##- sublime
+
+    #vars_files:
+    #    - variable.yml
+    #tasks:
+    #    - include: task.yml
+
+## Example tasks
+#        -
+#            name: "Apache installing"
+#            apt: name="apache2" state=present
