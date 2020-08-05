@@ -8,8 +8,7 @@
 -
     name: install sublime repo (apt)
     apt_repository:
-        repo: 'deb https://download.sublimetext.com/'
-        add: apt/stable/
+        repo: 'deb https://download.sublimetext.com/ apt/stable/'
         filename: sublime-text
         state: present
 - 

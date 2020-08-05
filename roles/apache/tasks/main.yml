@@ -1,5 +1,0 @@
----
-# tasks file for apache
--
-    name: "Apache installing"
-    apt: name="apache2" state=present
