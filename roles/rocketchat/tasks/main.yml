@@ -1,0 +1,7 @@
+---
+# tasks file for roles/rocketchat
+
+- name: Install a .deb package from the internet.
+  apt:
+    deb: https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/2.17.11/rocketchat_2.17.11_amd64.deb
+    state: present

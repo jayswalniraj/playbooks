@@ -1,0 +1,47 @@
+---
+# tasks file for roles/docker
+- name: install key (apt)
+  apt_key:
+      id: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
+      url: 'https://download.docker.com/linux/ubuntu/gpg'
+      state: present
+# # - 
+# #     name: install docker repo (apt)
+# #     apt_repository:
+# #         repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu  $(lsb_release -cs)  stable" 
+# #         filename: docker
+# #         state: present
+# #         update_cache: true
+# # - name: install docker (apt)
+# #   apt:
+# #     name: docker-ce
+# #     state: present
+
+- name: Install a .deb package from the internet.
+  apt:
+    deb: https://download.docker.com/linux/ubuntu/dists/bionic/pool/edge/amd64/docker-ce_18.03.1~ce~3-0~ubuntu_amd64.deb
+    state: present
+
+- name: Download docker compose
+  get_url:
+    url: "https://github.com/docker/compose/releases/download/1.25.1-rc1/docker-compose-Linux-x86_64"
+    dest: /usr/local/bin/docker-compose
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Create symbolic link for user
+  file:
+    src: "/usr/local/bin/docker-compose"
+    dest: "/usr/bin/docker-compose"
+    state: link
+    owner: root
+    group: root
+    mode: 0777
+
+- 
+     name: user add with in docker
+     user:
+         name: addweb
+         groups: docker
+         append: yes

@@ -1,0 +1,8 @@
+---
+# tasks file for reboot
+- name: Run the equivalent of "apt-get update" as a separate step
+  apt:
+    update_cache: yes
+
+- name: Unconditionally reboot the machine with all defaults
+  reboot:

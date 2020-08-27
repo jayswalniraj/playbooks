@@ -1,7 +1,8 @@
 server  ansible_host=server.vmdns.com ansible_ssh_pass=admin@123  ansible_connection=ssh ansible_port=22 ansible_user=sysadmin
 slave1  ansible_host=slave1.vmdns.com ansible_ssh_pass=vagrant  ansible_connection=ssh ansible_port=22 ansible_user=vagrant
 slave2  ansible_host=slave2.vmdns.com ansible_ssh_pass=vagrant  ansible_connection=ssh ansible_port=22 ansible_user=vagrant
-desk    ansible_host=desk ansible_ssh_pass=admin@123 ansible_connection=ssh ansible_port=22 ansible_user=sysadmin  
+tc1     ansible_host=192.168.33.15 ansible_ssh_pass=vagrant ansible_connection=ssh ansible_port=22 ansible_user=vagrant  
+addweb  ansible_host=192.168.1.38 ansible_ssh_pass=addweb123 ansible_connection=ssh ansible_port=22 ansible_user=addweb  
 
 [dnsserver]
 server

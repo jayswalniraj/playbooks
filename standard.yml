@@ -1,17 +1,24 @@
--
-    name: standard Playbook
-    hosts : desk
+-   name: standard Playbook
+    hosts : addweb
 # default strategy is liner means run with parallell machine ,In Free it will we run serial vise 
     # strategy: linear or free
 # set serial limitation
     serial: 1    
     become: true
     roles:
-        #- skype
-        #- common
-        #- chrome
-        #- vscode
-       ##- sublime
+        - common
+        - skype
+        - chrome
+        - vscode
+        - sublime
+        - rocketchat
+        - slack
+        - docker
+        - dockerenv
+        - anydesk
+        - reboot
+        
+
 
     #vars_files:
     #    - variable.yml
